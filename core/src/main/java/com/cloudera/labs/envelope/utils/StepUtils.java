@@ -136,11 +136,11 @@ public class StepUtils {
 
   public static void resetDataSteps(Set<Step> steps) {
     for (Step step : steps) {
-      if (step instanceof DataStep) {
-        if (step.hasSubmitted()) {
-          LOG.debug("Resetting step [{}]", step.getName());
+      if (step.hasSubmitted()) {
+        LOG.debug("Resetting step [{}]", step.getName());
+        step.setSubmitted(false);
+        if (step instanceof DataStep) {
           ((DataStep) step).clearCache();
-          step.setSubmitted(false);
         }
       }
     }
