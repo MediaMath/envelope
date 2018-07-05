@@ -32,6 +32,7 @@ public class EnvelopeMain {
   // Other Java/Scala programs could instead launch an Envelope pipeline by passing their
   // own Config object to Runner#run.
   public static void main(String[] args) throws Exception {
+    LOG.error("Hello from envelope!"); // debug
     LOG.info("Envelope application started");
 
     Config config = ConfigUtils.configFromPath(args[0]);

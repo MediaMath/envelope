@@ -165,6 +165,7 @@ public class Runner {
    */
   @SuppressWarnings("unchecked")
   private static void runStreaming(final Set<Step> steps) throws Exception {
+    System.out.println("Started streaming for steps: " + StepUtils.stepNamesAsString(steps));
     final Set<Step> independentNonStreamingSteps = StepUtils.getIndependentNonStreamingSteps(steps);
     runBatch(independentNonStreamingSteps);
 
@@ -220,6 +221,7 @@ public class Runner {
    */
   private static void runBatch(Set<Step> steps) throws Exception {
     LOG.debug("Started batch for steps: {}", StepUtils.stepNamesAsString(steps));
+    System.out.println("Started batch for steps: " + StepUtils.stepNamesAsString(steps));
     
     Set<Future<Void>> offMainThreadSteps = Sets.newHashSet();
     Set<Step> refactoredSteps = null;

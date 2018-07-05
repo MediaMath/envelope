@@ -135,8 +135,11 @@ public class StepUtils {
   }
 
   public static void resetDataSteps(Set<Step> steps) {
+    System.out.println("resetDataSteps() entry");
     for (Step step : steps) {
+      System.out.println("considering step: " + step.getName());
       if (step.hasSubmitted()) {
+        System.out.println("resetting step: " + step.getName());
         LOG.debug("Resetting step [{}]", step.getName());
         step.setSubmitted(false);
         if (step instanceof DataStep) {
