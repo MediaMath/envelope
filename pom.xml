@@ -71,6 +71,10 @@
       <id>cloudera</id>
       <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
     </repository>
+    <repository>
+      <id>Spring Plugins</id>
+      <url>http://repo.spring.io/plugins-release/</url>
+    </repository>
   </repositories>
 
   <dependencyManagement>
